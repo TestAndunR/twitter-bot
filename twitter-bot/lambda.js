@@ -7,24 +7,24 @@ exports.handler = function (event, context, callback) {
     twitter.searchTweets({
         "searchParams": {
             "q": "#serverless",
-            "count": "2"
+            "count": 2
         },
         "clientName": "twClient"
     }).then(response => {
         let data = response.data;
         console.log(data);
-        for (let i=0; i < count;i++) {
-            twitterID = data
-            twitter.createRetweet({
-                "tweetID": twitterID,
-                "clientName": "twClient"
-            }).then(response => {
-                let data = response.data;
-            }).catch(err => {
-                console.log(err);
-            });
-        }
-        
+        // for (let i=0; i < count;i++) {
+        //     twitterID = data
+        //     twitter.createRetweet({
+        //         "tweetID": twitterID,
+        //         "clientName": "twClient"
+        //     }).then(response => {
+        //         let data = response.data;
+        //     }).catch(err => {
+        //         console.log(err);
+        //     });
+        // }
+
 
     }).catch(err => {
         console.log(err);
